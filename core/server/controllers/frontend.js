@@ -10,6 +10,7 @@ var moment      = require('moment'),
     url         = require('url'),
     when        = require('when'),
     Route       = require('express').Route,
+    sm          = require('sitemap'),
 
     api         = require('../api'),
     config      = require('../config'),
@@ -63,7 +64,33 @@ function handleError(next) {
     };
 }
 
+function buildSitemap(posts, done, sitemap) {
+    var sitemap = sitemap || sm.createSitemap({
+        hostname: config().url,
+        cacheTime: 600000
+    });
+
+    if (posts.length > 0) {
+        var post = posts.shift();
+        sitemap.add({ url: '/' + post.slug + '/' });
+        process.nextTick(buildSitemap.bind(this, posts, done, sitemap));
+    }
+    else {
+        done(sitemap);
+    }
+}
+
 frontendControllers = {
+    'sitemap': function(req, res, next) {
+        api.posts.browse({}).then(function(result) {
+            buildSitemap(result.posts, function(sitemap) {
+                sitemap.toXML(function(xml) {
+                    res.header('Content-Type', 'application/xml');
+                    res.send(xml);
+                });
+            });
+        });
+    },
     'homepage': function (req, res, next) {
         // Parse the page number
         var pageParam = req.params.page !== undefined ? parseInt(req.params.page, 10) : 1,

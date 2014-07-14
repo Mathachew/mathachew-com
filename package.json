@@ -54,7 +54,8 @@
     "validator": "3.4.0",
     "when": "2.7.0",
     "xml": "0.0.12",
-    "azure-storage": "~0.3.0"
+    "azure-storage": "~0.3.0",
+    "sitemap": "~0.7.3"
   },
   "optionalDependencies": {
     "mysql": "2.1.1"
