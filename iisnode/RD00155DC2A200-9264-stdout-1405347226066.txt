@@ -1,0 +1,4 @@
+[32mGhost is running...[39m 
+Your blog is now available on http://mathachew.azurewebsites.net [90m
+Ctrl+C to shut down[39m
+192.184.48.100:52593 - - [Mon, 14 Jul 2014 14:13:56 GMT] "GET /contact/ HTTP/1.1" 404 1699 "-" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)"

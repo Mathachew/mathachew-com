@@ -1,0 +1,80 @@
+[31m
+ERROR:[39m [31mpath is not defined[39m 
+ [37mRendering Error Page[39m 
+ [32mGhost caught a processing error in the middleware layer.[39m 
+ ReferenceError: path is not defined
+    at D:\home\site\wwwroot\core\server\routes\frontend.js:27:22
+    at callbacks (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:164:37)
+    at param (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:138:11)
+    at pass (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:145:5)
+    at Router._dispatch (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:173:5)
+    at Object.router (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:33:10)
+    at next (D:\home\site\wwwroot\node_modules\express\node_modules\connect\lib\proto.js:193:15)
+    at Object.initViews [as handle] (D:\home\site\wwwroot\core\server\middleware\index.js:87:5)
+    at next (D:\home\site\wwwroot\node_modules\express\node_modules\connect\lib\proto.js:193:15)
+    at D:\home\site\wwwroot\core\server\middleware\middleware.js:121:13 
+
+[31m
+ERROR:[39m [31mpath is not defined[39m 
+ [37mRendering Error Page[39m 
+ [32mGhost caught a processing error in the middleware layer.[39m 
+ ReferenceError: path is not defined
+    at D:\home\site\wwwroot\core\server\routes\frontend.js:27:22
+    at callbacks (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:164:37)
+    at param (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:138:11)
+    at pass (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:145:5)
+    at Router._dispatch (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:173:5)
+    at Object.router (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:33:10)
+    at next (D:\home\site\wwwroot\node_modules\express\node_modules\connect\lib\proto.js:193:15)
+    at Object.initViews [as handle] (D:\home\site\wwwroot\core\server\middleware\index.js:87:5)
+    at next (D:\home\site\wwwroot\node_modules\express\node_modules\connect\lib\proto.js:193:15)
+    at D:\home\site\wwwroot\core\server\middleware\middleware.js:121:13 
+
+[31m
+ERROR:[39m [31mpath is not defined[39m 
+ [37mRendering Error Page[39m 
+ [32mGhost caught a processing error in the middleware layer.[39m 
+ ReferenceError: path is not defined
+    at D:\home\site\wwwroot\core\server\routes\frontend.js:27:22
+    at callbacks (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:164:37)
+    at param (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:138:11)
+    at pass (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:145:5)
+    at Router._dispatch (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:173:5)
+    at Object.router (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:33:10)
+    at next (D:\home\site\wwwroot\node_modules\express\node_modules\connect\lib\proto.js:193:15)
+    at Object.initViews [as handle] (D:\home\site\wwwroot\core\server\middleware\index.js:87:5)
+    at next (D:\home\site\wwwroot\node_modules\express\node_modules\connect\lib\proto.js:193:15)
+    at D:\home\site\wwwroot\core\server\middleware\middleware.js:121:13 
+
+[31m
+ERROR:[39m [31mpath is not defined[39m 
+ [37mRendering Error Page[39m 
+ [32mGhost caught a processing error in the middleware layer.[39m 
+ ReferenceError: path is not defined
+    at D:\home\site\wwwroot\core\server\routes\frontend.js:27:22
+    at callbacks (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:164:37)
+    at param (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:138:11)
+    at pass (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:145:5)
+    at Router._dispatch (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:173:5)
+    at Object.router (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:33:10)
+    at next (D:\home\site\wwwroot\node_modules\express\node_modules\connect\lib\proto.js:193:15)
+    at Object.initViews [as handle] (D:\home\site\wwwroot\core\server\middleware\index.js:87:5)
+    at next (D:\home\site\wwwroot\node_modules\express\node_modules\connect\lib\proto.js:193:15)
+    at D:\home\site\wwwroot\core\server\middleware\middleware.js:121:13 
+
+[31m
+ERROR:[39m [31mpath is not defined[39m 
+ [37mRendering Error Page[39m 
+ [32mGhost caught a processing error in the middleware layer.[39m 
+ ReferenceError: path is not defined
+    at D:\home\site\wwwroot\core\server\routes\frontend.js:27:22
+    at callbacks (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:164:37)
+    at param (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:138:11)
+    at pass (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:145:5)
+    at Router._dispatch (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:173:5)
+    at Object.router (D:\home\site\wwwroot\node_modules\express\lib\router\index.js:33:10)
+    at next (D:\home\site\wwwroot\node_modules\express\node_modules\connect\lib\proto.js:193:15)
+    at Object.initViews [as handle] (D:\home\site\wwwroot\core\server\middleware\index.js:87:5)
+    at next (D:\home\site\wwwroot\node_modules\express\node_modules\connect\lib\proto.js:193:15)
+    at D:\home\site\wwwroot\core\server\middleware\middleware.js:121:13 
+

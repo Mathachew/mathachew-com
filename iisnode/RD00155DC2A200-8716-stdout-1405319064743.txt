@@ -1,0 +1,13 @@
+[32mGhost is running...[39m 
+Your blog is now available on http://mathachew.azurewebsites.net [90m
+Ctrl+C to shut down[39m
+99.11.180.220:25022 - - [Mon, 14 Jul 2014 06:24:34 GMT] "GET / HTTP/1.1" 304 - "http://mathachew.azurewebsites.net/about/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+99.11.180.220:25022 - - [Mon, 14 Jul 2014 06:24:35 GMT] "GET /assets/css/normalize.css HTTP/1.1" 304 - "http://mathachew.azurewebsites.net/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+99.11.180.220:25023 - - [Mon, 14 Jul 2014 06:24:35 GMT] "GET /assets/css/main.css HTTP/1.1" 304 - "http://mathachew.azurewebsites.net/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+99.11.180.220:25024 - - [Mon, 14 Jul 2014 06:24:35 GMT] "GET /assets/css/custom.css HTTP/1.1" 304 - "http://mathachew.azurewebsites.net/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+99.11.180.220:25025 - - [Mon, 14 Jul 2014 06:24:35 GMT] "GET /assets/css/prettify.css HTTP/1.1" 304 - "http://mathachew.azurewebsites.net/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+99.11.180.220:25026 - - [Mon, 14 Jul 2014 06:24:35 GMT] "GET /assets/js/prettify.js HTTP/1.1" 304 - "http://mathachew.azurewebsites.net/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+99.11.180.220:25026 - - [Mon, 14 Jul 2014 06:24:46 GMT] "GET /contact HTTP/1.1" 301 - "-" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+99.11.180.220:25026 - - [Mon, 14 Jul 2014 06:24:46 GMT] "GET /contact/ HTTP/1.1" 404 1699 "-" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+99.11.180.220:25025 - - [Mon, 14 Jul 2014 06:24:47 GMT] "GET /ghost/img/404-ghost.png?v=5457fb28bc HTTP/1.1" 200 3681 "http://mathachew.azurewebsites.net/contact/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+99.11.180.220:25026 - - [Mon, 14 Jul 2014 06:24:47 GMT] "GET /ghost/css/ghost-ui.min.css?v=5457fb28bc HTTP/1.1" 200 92443 "http://mathachew.azurewebsites.net/contact/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"

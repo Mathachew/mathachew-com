@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{{! Document Settings }}
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<meta name="google-site-verification" content="rni-qbP-0hUXwrQ_RaF6xrCbKlk-YW_vQbYosbpvt7Y" />
+	<meta name="msvalidate.01" content="616D236A7E43C8E685DA3597A338E8AC" />
+
+	{{! Page Meta }}
+	<title>{{meta_title}}</title>
+	{{#if post}}
+	<meta name="keywords" content="{{#each post.tags}}{{name}},{{/each}}">
+	{{else}}
+	<meta name="keywords" content="android, javascript, sublime, freelance">
+	{{/if}}
+
+	<meta name="description" content="{{meta_description}}" />
+
+
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="MobileOptimized" content="320" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/custom.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css" />
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+
+	<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="/assets/js/prettify.js"></script>
+	<script>
+	$(function () {
+		var m = "";
+		var s = "nbuibdifxAhnbjm/dpn";
+
+		for (i = 0; i < s.length; i++) {
+			m += String.fromCharCode(s.charCodeAt(i) - 1);
+		}
+
+		document.getElementById('email').href = 'mailto:' + m;
+	});
+	</script>
+
+	{{! Ghost outputs important style and meta data with this tag }}
+	{{ghost_head}}
+</head>
+<body class="{{body_class}}">
+	
+	{{> sidebar }}
+
+	<div class="content">
+		{{{body}}}
+	</div>
+
+	{{! ghost_foot prints a unminified version of jquery here :/ }}
+	{{!ghost_foot}}
+
+	{{! The main JavaScript file for Casper }}
+	{{> analytics}}
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+[32mGhost is running...[39m 
+Your blog is now available on http://mathachew.azurewebsites.net [90m
+Ctrl+C to shut down[39m
+91.207.7.133:50433 - - [Mon, 14 Jul 2014 06:18:02 GMT] "GET /blog/css-svg-gradients-with-transparency/ HTTP/1.1" 200 7688 "-" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) ; .NET CLR 1.0.3705)"
+99.11.180.220:24934 - - [Mon, 14 Jul 2014 06:21:56 GMT] "GET / HTTP/1.1" 200 8540 "http://mathachew.azurewebsites.net/about/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+99.11.180.220:24934 - - [Mon, 14 Jul 2014 06:21:56 GMT] "GET /assets/css/normalize.css HTTP/1.1" 304 - "http://mathachew.azurewebsites.net/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+99.11.180.220:24935 - - [Mon, 14 Jul 2014 06:21:56 GMT] "GET /assets/css/main.css HTTP/1.1" 304 - "http://mathachew.azurewebsites.net/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+99.11.180.220:24937 - - [Mon, 14 Jul 2014 06:21:56 GMT] "GET /assets/css/custom.css HTTP/1.1" 304 - "http://mathachew.azurewebsites.net/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+99.11.180.220:24936 - - [Mon, 14 Jul 2014 06:21:56 GMT] "GET /assets/css/prettify.css HTTP/1.1" 304 - "http://mathachew.azurewebsites.net/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+99.11.180.220:24940 - - [Mon, 14 Jul 2014 06:21:56 GMT] "GET /assets/js/prettify.js HTTP/1.1" 304 - "http://mathachew.azurewebsites.net/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+99.11.180.220:24940 - - [Mon, 14 Jul 2014 06:21:59 GMT] "GET / HTTP/1.1" 304 - "http://mathachew.azurewebsites.net/about/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"

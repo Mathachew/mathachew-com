@@ -1,0 +1,5 @@
+[32mGhost is running...[39m 
+Your blog is now available on http://mathachew.azurewebsites.net [90m
+Ctrl+C to shut down[39m
+192.184.48.100:65249 - - [Mon, 14 Jul 2014 10:03:20 GMT] "GET /blog/css-svg-gradients-with-transparency/ HTTP/1.1" 200 7688 "-" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) ; .NET CLR 2.0.50727 ; .NET CLR 4.0.30319)"
+192.184.48.100:65249 - - [Mon, 14 Jul 2014 10:03:21 GMT] "POST /blog/css-svg-gradients-with-transparency/trackback/ HTTP/1.1" 404 14 "http://mathachew.azurewebsites.net/blog/css-svg-gradients-with-transparency/" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) )"

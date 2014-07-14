@@ -1,0 +1,13 @@
+[32mGhost is running...[39m 
+Your blog is now available on http://www.mathachew.com [90m
+Ctrl+C to shut down[39m
+4.30.3.226:39540 - - [Mon, 14 Jul 2014 21:08:59 GMT] "GET / HTTP/1.1" 200 8422 "-" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+4.30.3.226:39541 - - [Mon, 14 Jul 2014 21:08:59 GMT] "GET / HTTP/1.1" 200 8422 "-" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+4.30.3.226:39543 - - [Mon, 14 Jul 2014 21:09:01 GMT] "GET / HTTP/1.1" 200 8422 "-" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+4.30.3.226:39543 - - [Mon, 14 Jul 2014 21:09:03 GMT] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+4.30.3.226:39543 - - [Mon, 14 Jul 2014 21:09:03 GMT] "GET /assets/css/normalize.css HTTP/1.1" 304 - "http://www.mathachew.com/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+4.30.3.226:39546 - - [Mon, 14 Jul 2014 21:09:03 GMT] "GET /assets/css/main.css HTTP/1.1" 304 - "http://www.mathachew.com/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+4.30.3.226:39556 - - [Mon, 14 Jul 2014 21:09:03 GMT] "GET /assets/css/custom.css HTTP/1.1" 304 - "http://www.mathachew.com/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+4.30.3.226:39558 - - [Mon, 14 Jul 2014 21:09:03 GMT] "GET /assets/css/prettify.css HTTP/1.1" 304 - "http://www.mathachew.com/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+4.30.3.226:39543 - - [Mon, 14 Jul 2014 21:09:03 GMT] "GET /assets/js/prettify.js HTTP/1.1" 304 - "http://www.mathachew.com/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+66.249.67.76:45929 - - [Mon, 14 Jul 2014 21:09:30 GMT] "GET /tag/science-fiction/ HTTP/1.1" 200 4337 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
