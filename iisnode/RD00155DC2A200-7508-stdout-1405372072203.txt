@@ -1,5 +1,0 @@
-[32mGhost is running...[39m 
-Your blog is now available on http://mathachew.azurewebsites.net [90m
-Ctrl+C to shut down[39m
-66.249.64.158:53803 - - [Mon, 14 Jul 2014 21:08:01 GMT] "GET /feed/ HTTP/1.1" 301 39 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
-66.249.64.153:60761 - - [Mon, 14 Jul 2014 21:08:02 GMT] "GET /rss/ HTTP/1.1" 200 21208 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"

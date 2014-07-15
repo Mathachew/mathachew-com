@@ -61,9 +61,11 @@ localFileStore = _.extend(baseStore, {
 
     // middleware for serving the files
     'serve': function () {
-        return function(req, res) {
-          res.send('file');
-        }
+        var ONE_HOUR_MS = 60 * 60 * 1000,
+            ONE_YEAR_MS = 365 * 24 * ONE_HOUR_MS;
+
+        // For some reason send divides the max age number by 1000
+        return express['static'](config().paths.imagesPath, {maxAge: ONE_YEAR_MS});
     }
 });
 
