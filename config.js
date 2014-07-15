@@ -3,7 +3,7 @@ var path = require('path'),
 
 config = {
     development: {
-        url: 'http://www.mathachew.com',
+        url: 'http://localhost:3000',
         mail: {
             transport: 'SMTP',
             options: {
@@ -17,13 +17,13 @@ config = {
         database: {
             client: 'sqlite3',
             connection: {
-                filename: path.join(__dirname, '/content/data/ghost-dev.db')
+                filename: path.join(__dirname, '/content/data/ghost.db')
             },
             debug: false
         },
         server: {
             host: '127.0.0.1',
-            port: process.env.PORT
+            port: process.env.PORT || 3000
         }
     },
     production: {
@@ -47,7 +47,7 @@ config = {
         },
         server: {
             host: '127.0.0.1',
-            port: process.env.PORT
+            port: process.env.PORT || 3000
         }
     }
 };
