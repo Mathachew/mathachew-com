@@ -1,4 +1,0 @@
-[32mGhost is running...[39m 
-Your blog is now available on http://mathachew.azurewebsites.net [90m
-Ctrl+C to shut down[39m
-4.30.3.226:34460 - - [Mon, 14 Jul 2014 19:05:50 GMT] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
