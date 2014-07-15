@@ -72,7 +72,8 @@ function buildSitemap(posts, done, sitemap) {
 
     if (posts.length > 0) {
         var post = posts.shift();
-        sitemap.add({ url: '/' + post.slug + '/' });
+        // Give static pages a higher priority
+        sitemap.add({ url: '/' + post.slug + '/', priority: post.page == 0 ? 0.5 : 0.8 });
         process.nextTick(buildSitemap.bind(this, posts, done, sitemap));
     }
     else {
@@ -82,7 +83,7 @@ function buildSitemap(posts, done, sitemap) {
 
 frontendControllers = {
     'sitemap': function(req, res, next) {
-        api.posts.browse({ staticPages: 'all' }).then(function(result) {
+        api.posts.browse({ staticPages: 'all', limit: 1000 }).then(function(result) {
             buildSitemap(result.posts, function(sitemap) {
                 sitemap.toXML(function(xml) {
                     res.header('Content-Type', 'application/xml');
