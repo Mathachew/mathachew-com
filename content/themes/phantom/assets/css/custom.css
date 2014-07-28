@@ -1,6 +1,9 @@
 hr {
     margin: 2.2em 0;
 }
+h3 a {
+    text-decoration: underline;
+}
 .sidebar .logo {
     border-radius: 75px;
     max-width: none;

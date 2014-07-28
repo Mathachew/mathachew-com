@@ -1,7 +1,6 @@
 $(function () {
-    $('input[type=text], input[type=password]').autotab();
+    $.autotab({ tabOnSelect: true });
     $('.number').autotab('filter', 'number');
-    $('.ssn').autotab('filter', 'number');
     $('.text').autotab('filter', 'text');
     $('.alpha').autotab('filter', 'alpha');
     $('.alphanumeric').autotab('filter', { format: 'alphanumeric', uppercase: true });
@@ -32,15 +31,15 @@ $(function () {
     });
     $('.hexadecimal').autotab('filter', 'hexadecimal');
     $('.ip').autotab('filter', { format: 'number', trigger: '.' });
-    $('.pin').autotab('filter', { format: 'number' });
+    $('.pin').autotab('filter', 'number');
 
     $('#remove-autotab').on('click', function () {
-        $('input[type=text]').autotab('remove');
+        $.autotab.remove();
         $('#autotab-status span').removeClass('on').addClass('off').text('Off');
     });
 
     $('#restore-autotab').on('click', function () {
-        $('input[type=text]').autotab('restore');
+        $.autotab.restore();
         $('#autotab-status span').removeClass('off').addClass('on').text('On');
     });
 });
