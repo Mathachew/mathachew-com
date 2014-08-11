@@ -52,6 +52,9 @@ h3 a {
 .website-clear {
     clear: both;
 }
+.post-content img {
+    max-width: 100%;
+}
 @media (max-width: 800px) {
     .sidebar {
         height: auto;
