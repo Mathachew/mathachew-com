@@ -1,11 +1,10 @@
-var errors = require('../errorHandling'),
+var errors = require('../errors'),
     storage;
 
 function get_storage() {
     // TODO: this is where the check for storage apps should go
     // Local file system is the default
     var storageChoice = 'localfilesystem';
-    storageChoice = 'blobstorage';
 
     if (storage) {
         return storage;
