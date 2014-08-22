@@ -119,7 +119,7 @@ function getActiveThemePaths() {
 
 function buildSitemap(posts, done, sitemap) {
     var sitemap = sitemap || sm.createSitemap({
-        hostname: config().url,
+        hostname: config.url,
         cacheTime: 600000
     });
 
