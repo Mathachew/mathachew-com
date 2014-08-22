@@ -130,6 +130,8 @@ function buildSitemap(posts, done, sitemap) {
         process.nextTick(buildSitemap.bind(this, posts, done, sitemap));
     }
     else {
+        // Base url
+        sitemap.add({ url: '/', priority: 1, changefreq: 'daily' });
         done(sitemap);
     }
 }
