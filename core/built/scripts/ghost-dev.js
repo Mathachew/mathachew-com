@@ -1367,9 +1367,13 @@ define("ghost/controllers/debug",
                 ic.ajax.request(this.get('ghostPaths.url').api('mail', 'test'), {
                     type: 'POST'
                 }).then(function () {
-                    self.notifications.showSuccess('Check your email for the test message:');
-                }).catch(function (response) {
-                    self.notifications.showErrors(response);
+                    self.notifications.showSuccess('Check your email for the test message.');
+                }).catch(function (error) {
+                    if (typeof error.jqXHR !== 'undefined') {
+                        self.notifications.showAPIError(error);
+                    } else {
+                        self.notifications.showErrors(error);
+                    }
                 });
             }
         }
@@ -7568,11 +7572,13 @@ define("ghost/views/settings/users/user",
             return this.get('controller.user.id') !== this.get('currentUser.id');
         }),
         
+        isNotOwnersProfile: Ember.computed.not('controller.user.isOwner'),
+        
         canAssignRoles: Ember.computed.or('currentUser.isAdmin', 'currentUser.isOwner'),
 
         canMakeOwner: Ember.computed.and('currentUser.isOwner', 'isNotOwnProfile', 'controller.user.isAdmin'),
         
-        rolesDropdownIsVisible: Ember.computed.and('isNotOwnProfile', 'canAssignRoles'),
+        rolesDropdownIsVisible: Ember.computed.and('isNotOwnProfile', 'canAssignRoles', 'isNotOwnersProfile'),
 
         deleteUserActionIsVisible: Ember.computed('currentUser', 'canAssignRoles', 'controller.user', function () {
             if ((this.get('canAssignRoles') && this.get('isNotOwnProfile') && !this.get('controller.user.isOwner')) ||
