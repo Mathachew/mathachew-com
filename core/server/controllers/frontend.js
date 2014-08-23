@@ -311,6 +311,17 @@ frontendControllers = {
             // Convert saved permalink into an express Route object
             permalink = dummyRouter.route(permalink.value + editFormat);
 
+            // A category exists in the URL
+            if (path.split('/').length - 1 > 2) {
+                permalink.keys.unshift({
+                    name: 'category',
+                    optional: false
+                });
+
+                permalink.route.path = '/:category' + permalink.route.path;
+                permalink.regexp = /^\/(?:([^\/]+?))(?:\/([^\/]+?))(?:\/([^\/]+?))?\/?$/i;
+            }
+
             // Check if the path matches the permalink structure.
             //
             // If there are no matches found we then
@@ -327,19 +338,16 @@ frontendControllers = {
                 usingStaticPermalink = true;
             }
 
-            // Custom url support, breaks edit support
-            if (permalink.params.edit !== undefined)
-            {
-                permalink.params.slug += '/' + permalink.params.edit;
-                permalink.params.edit = undefined;
-            }
-
             params = permalink.params;
 
             // Sanitize params we're going to use to lookup the post.
-            postLookup = _.pick(permalink.params, 'slug', 'id');
+            postLookup = _.pick(permalink.params, 'category', 'slug', 'id');
             // Add author, tag and fields
             postLookup.include = 'author,tags,fields';
+
+            if (typeof postLookup.category !== 'undefined') {
+                postLookup.slug = postLookup.category + '/' + postLookup.slug;
+            }
 
             // Query database to find post
             return api.posts.read(postLookup);
