@@ -3,7 +3,7 @@ var path = require('path'),
 
 config = {
     development: {
-        url: 'http://localhost:3000',
+        url: 'http://www.mathachew.com',
         mail: {
             transport: 'SMTP',
             options: {
