@@ -1486,6 +1486,45 @@ define("ghost/controllers/forgotten",
     
     __exports__["default"] = ForgottenController;
   });
+define("ghost/controllers/modals/auth-failed-unsaved", 
+  ["exports"],
+  function(__exports__) {
+    "use strict";
+    var AuthFailedUnsavedController = Ember.Controller.extend({
+        editorController: Ember.computed.alias('model'),
+
+        actions: {
+            confirmAccept: function () {
+                var editorController = this.get('editorController');
+
+                if (editorController) {
+                    editorController.get('model').rollback();
+                }
+
+                window.onbeforeunload = null;
+
+                window.location = this.get('ghostPaths').adminRoot + '/signin/';
+            },
+
+            confirmReject: function () {
+
+            }
+        },
+
+        confirm: {
+            accept: {
+                text: 'Leave',
+                buttonClass: 'btn btn-red'
+            },
+            reject: {
+                text: 'Stay',
+                buttonClass: 'btn btn-default btn-minor'
+            }
+        }
+    });
+
+    __exports__["default"] = AuthFailedUnsavedController;
+  });
 define("ghost/controllers/modals/delete-all", 
   ["exports"],
   function(__exports__) {
@@ -4765,7 +4804,7 @@ define("ghost/models/slug-generator",
                 return Ember.RSVP.resolve('');
             }
 
-            url = this.get('ghostPaths.url').api('slugs', this.get('slugType')) + '?name=' + encodeURIComponent(textToSlugify);
+            url = this.get('ghostPaths.url').api('slugs', this.get('slugType'), encodeURIComponent(textToSlugify));
 
             return ic.ajax.request(url, {
                 type: 'GET'
@@ -4967,6 +5006,18 @@ define("ghost/routes/application",
         },
 
         actions: {
+            authorizationFailed: function () {
+                var currentRoute = this.get('controller').get('currentRouteName');
+
+                if (currentRoute.split('.')[0] === 'editor') {
+                    this.send('openModal', 'auth-failed-unsaved', this.controllerFor(currentRoute));
+
+                    return;
+                }
+
+                this._super();
+            },
+
             closePopups: function () {
                 this.get('popover').closePopovers();
                 this.get('notifications').closeAll();

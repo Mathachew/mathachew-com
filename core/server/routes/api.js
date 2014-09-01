@@ -39,7 +39,7 @@ apiRoutes = function (middleware) {
     router.get('/roles/', api.http(api.roles.browse));
 
     // ## Slugs
-    router.get('/slugs/:type', api.http(api.slugs.generate));
+    router.get('/slugs/:type/:name', api.http(api.slugs.generate));
 
     // ## Themes
     router.get('/themes', api.http(api.themes.browse));
