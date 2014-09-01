@@ -4804,7 +4804,7 @@ define("ghost/models/slug-generator",
                 return Ember.RSVP.resolve('');
             }
 
-            url = this.get('ghostPaths.url').api('slugs', this.get('slugType'), encodeURIComponent(textToSlugify));
+            url = this.get('ghostPaths.url').api('slugs', this.get('slugType')) + '?name=' + encodeURIComponent(textToSlugify);
 
             return ic.ajax.request(url, {
                 type: 'GET'
