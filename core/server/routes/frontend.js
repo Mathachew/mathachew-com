@@ -28,7 +28,6 @@ frontendRoutes = function () {
     });
 
     // ### Frontend routes
-    router.get('/sitemap.xml/', frontend.sitemap);
     router.get('/rss/', frontend.rss);
     router.get('/rss/:page/', frontend.rss);
     router.get('/feed/', function redirect(req, res) {

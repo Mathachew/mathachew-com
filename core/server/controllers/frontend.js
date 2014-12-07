@@ -15,7 +15,6 @@ var moment      = require('moment'),
     template    = require('../helpers/template'),
     errors      = require('../errors'),
     cheerio     = require('cheerio'),
-    sm          = require('sitemap'),
 
     frontendControllers,
     staticPostPermalink,
@@ -144,36 +143,7 @@ function getActiveThemePaths() {
     });
 }
 
-function buildSitemap(posts, done, sitemap) {
-    var sitemap = sitemap || sm.createSitemap({
-        hostname: config.url,
-        cacheTime: 600000
-    });
-
-    if (posts.length > 0) {
-        var post = posts.shift();
-        // Give static pages a higher priority
-        sitemap.add({ url: '/' + post.slug + '/', priority: post.page == 0 ? 0.5 : 0.8 });
-        process.nextTick(buildSitemap.bind(this, posts, done, sitemap));
-    }
-    else {
-        // Base url
-        sitemap.add({ url: '/', priority: 1, changefreq: 'daily' });
-        done(sitemap);
-    }
-}
-
 frontendControllers = {
-    sitemap: function(req, res, next) {
-        api.posts.browse({ staticPages: 'all', limit: 1000 }).then(function(result) {
-            buildSitemap(result.posts, function(sitemap) {
-                sitemap.toXML(function(xml) {
-                    res.header('Content-Type', 'application/xml');
-                    res.send(xml);
-                });
-            });
-        });
-    },
     homepage: function (req, res, next) {
         // Parse the page number
         var pageParam = req.params.page !== undefined ? parseInt(req.params.page, 10) : 1,
@@ -590,7 +560,7 @@ frontendControllers = {
                         feed.item(item);
                     });
                 }).then(function () {
-                    res.set('Content-Type', 'text/xml; charset=UTF-8');
+                    res.set('Content-Type', 'application/rss+xml; charset=UTF-8');
                     res.send(feed.xml());
                 });
             });
