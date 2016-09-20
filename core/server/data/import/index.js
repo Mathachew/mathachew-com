@@ -3,13 +3,15 @@ var Promise         = require('bluebird'),
     validation      = require('../validation'),
     errors          = require('../../errors'),
     uuid            = require('node-uuid'),
-    validator       = require('validator'),
+    importer        = require('./data-importer'),
     tables          = require('../schema').tables,
+    i18n            = require('../../i18n'),
     validate,
     handleErrors,
     checkDuplicateAttributes,
     sanitize,
-    cleanError;
+    cleanError,
+    doImport;
 
 cleanError = function cleanError(error) {
     var temp,
@@ -35,7 +37,7 @@ cleanError = function cleanError(error) {
             value = error.raw.detail;
             offendingProperty = error.model;
         }
-        message = 'Duplicate entry found. Multiple values of "' + value + '" found for ' + offendingProperty + '.';
+        message = i18n.t('errors.data.import.index.duplicateEntryFound', {value: value, offendingProperty: offendingProperty});
     }
 
     offendingProperty = offendingProperty || error.model;
@@ -69,7 +71,7 @@ handleErrors = function handleErrors(errorList) {
 checkDuplicateAttributes = function checkDuplicateAttributes(data, comparedValue, attribs) {
     // Check if any objects in data have the same attribute values
     return _.find(data, function (datum) {
-        return _.all(attribs, function (attrib) {
+        return _.every(attribs, function (attrib) {
             return datum[attrib] === comparedValue[attrib];
         });
     });
@@ -77,7 +79,8 @@ checkDuplicateAttributes = function checkDuplicateAttributes(data, comparedValue
 
 sanitize = function sanitize(data) {
     var allProblems = {},
-        tableNames = _.sortBy(_.keys(data.data), function (tableName) {
+        tablesInData = _.keys(data.data),
+        tableNames = _.sortBy(_.keys(tables), function (tableName) {
             // We want to guarantee posts and tags go first
             if (tableName === 'posts') {
                 return 1;
@@ -88,15 +91,17 @@ sanitize = function sanitize(data) {
             return 3;
         });
 
+    tableNames = _.intersection(tableNames, tablesInData);
+
     _.each(tableNames, function (tableName) {
-        // Sanitize the table data for duplicates and valid uuid values
+        // Sanitize the table data for duplicates and valid uuid and created_at values
         var sanitizedTableData = _.transform(data.data[tableName], function (memo, importValues) {
             var uuidMissing = (!importValues.uuid && tables[tableName].uuid) ? true : false,
-                uuidMalformed = (importValues.uuid && !validator.isUUID(importValues.uuid)) ? true : false,
+                uuidMalformed = (importValues.uuid && !validation.validator.isUUID(importValues.uuid)) ? true : false,
                 isDuplicate,
                 problemTag;
 
-            // Check for correct UUID and fix if neccessary
+            // Check for correct UUID and fix if necessary
             if (uuidMissing || uuidMalformed) {
                 importValues.uuid = uuid.v4();
             }
@@ -165,15 +170,16 @@ validate = function validate(data) {
 
     _.each(_.keys(data.data), function (tableName) {
         _.each(data.data[tableName], function (importValues) {
-            validateOps.push(validation.validateSchema(tableName, importValues));
+            validateOps.push(validation.
+                validateSchema(tableName, importValues).reflect());
         });
     });
 
-    return Promise.settle(validateOps).then(function (descriptors) {
+    return Promise.all(validateOps).then(function (descriptors) {
         var errorList = [];
 
         _.each(descriptors, function (d) {
-            if (d.isRejected()) {
+            if (!d.isFulfilled()) {
                 errorList = errorList.concat(d.reason());
             }
         });
@@ -184,25 +190,12 @@ validate = function validate(data) {
     });
 };
 
-module.exports = function (version, data) {
-    var importer,
-        sanitizeResults;
-
-    sanitizeResults = sanitize(data);
+doImport = function (data) {
+    var sanitizeResults = sanitize(data);
 
     data = sanitizeResults.data;
 
     return validate(data).then(function () {
-        try {
-            importer = require('./' + version);
-        } catch (ignore) {
-            // Zero effs given
-        }
-
-        if (!importer) {
-            return Promise.reject('No importer found');
-        }
-
         return importer.importData(data);
     }).then(function () {
         return sanitizeResults;
@@ -210,3 +203,5 @@ module.exports = function (version, data) {
         return handleErrors(result);
     });
 };
+
+module.exports.doImport = doImport;

@@ -4,8 +4,8 @@
 function NoPermissionError(message) {
     this.message = message;
     this.stack = new Error().stack;
-    this.code = 403;
-    this.type = this.name;
+    this.statusCode = 403;
+    this.errorType = this.name;
 }
 
 NoPermissionError.prototype = Object.create(Error.prototype);

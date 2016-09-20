@@ -4,8 +4,8 @@
 function NotFoundError(message) {
     this.message = message;
     this.stack = new Error().stack;
-    this.code = 404;
-    this.type = this.name;
+    this.statusCode = 404;
+    this.errorType = this.name;
 }
 
 NotFoundError.prototype = Object.create(Error.prototype);

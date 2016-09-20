@@ -5,13 +5,14 @@
 
 var _               = require('lodash'),
     errors          = require('../errors'),
+    i18n            = require('../i18n'),
     has;
 
 has = function (options) {
     options = options || {};
     options.hash = options.hash || {};
 
-    var tags = _.pluck(this.tags, 'name'),
+    var tags = _.map(this.tags, 'name'),
         author = this.author ? this.author.name : null,
         tagList = options.hash.tag || false,
         authorList = options.hash.author || false,
@@ -25,7 +26,7 @@ has = function (options) {
             return p || (_.findIndex(tags, function (item) {
                 // Escape regex special characters
                 item = item.replace(/[\-\/\\\^$*+?.()|\[\]{}]/g, '\\$&');
-                item = new RegExp(item, 'i');
+                item = new RegExp('^' + item + '$', 'i');
                 return item.test(c);
             }) !== -1);
         }, false);
@@ -36,11 +37,11 @@ has = function (options) {
             return v.trim().toLocaleLowerCase();
         });
 
-        return _.contains(authorList, author.toLocaleLowerCase());
+        return _.includes(authorList, author.toLocaleLowerCase());
     }
 
     if (!tagList && !authorList) {
-        errors.logWarn('Invalid or no attribute given to has helper');
+        errors.logWarn(i18n.t('warnings.helpers.has.invalidAttribute'));
         return;
     }
 

@@ -4,28 +4,12 @@
 // Returns the URL for the current object scope i.e. If inside a post scope will return post permalink
 // `absolute` flag outputs absolute URL, else URL is relative
 
-var Promise         = require('bluebird'),
-    config          = require('../config'),
-    api             = require('../api'),
-    schema          = require('../data/schema').checks,
-    url;
+var getMetaDataUrl = require('../data/meta/url');
 
-url = function (options) {
+function url(options) {
     var absolute = options && options.hash.absolute;
 
-    if (schema.isPost(this)) {
-        return config.urlForPost(api.settings, this, absolute);
-    }
-
-    if (schema.isTag(this)) {
-        return Promise.resolve(config.urlFor('tag', {tag: this}, absolute));
-    }
-
-    if (schema.isUser(this)) {
-        return Promise.resolve(config.urlFor('author', {author: this}, absolute));
-    }
-
-    return Promise.resolve(config.urlFor(this, absolute));
-};
+    return getMetaDataUrl(this, absolute);
+}
 
 module.exports = url;

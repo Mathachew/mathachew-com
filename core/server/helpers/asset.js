@@ -3,37 +3,23 @@
 //
 // Returns the path to the specified asset. The ghost flag outputs the asset path for the Ghost admin
 
-var hbs             = require('express-hbs'),
-    config          = require('../config'),
-    utils           = require('./utils'),
-    asset;
+var getAssetUrl = require('../data/meta/asset_url'),
+    hbs = require('express-hbs');
 
-asset = function (context, options) {
-    var output = '',
-        isAdmin = options && options.hash && options.hash.ghost;
+function asset(path, options) {
+    var isAdmin,
+        minify;
 
-    output += config.paths.subdir + '/';
-
-    if (!context.match(/^favicon\.ico$/) && !context.match(/^shared/) && !context.match(/^asset/)) {
-        if (isAdmin) {
-            output += 'ghost/';
-        } else {
-            output += 'assets/';
-        }
+    if (options && options.hash) {
+        isAdmin = options.hash.ghost;
+        minify = options.hash.minifyInProduction;
     }
-
-    // Get rid of any leading slash on the context
-    context = context.replace(/^\//, '');
-    output += context;
-
-    if (!context.match(/^favicon\.ico$/)) {
-        output = utils.assetTemplate({
-            source: output,
-            version: config.assetHash
-        });
+    if (process.env.NODE_ENV !== 'production') {
+        minify = false;
     }
-
-    return new hbs.handlebars.SafeString(output);
-};
+    return new hbs.handlebars.SafeString(
+        getAssetUrl(path, isAdmin, minify)
+    );
+}
 
 module.exports = asset;

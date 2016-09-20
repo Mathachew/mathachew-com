@@ -4,8 +4,8 @@
 function DataImportError(message, offendingProperty, value) {
     this.message = message;
     this.stack = new Error().stack;
-    this.code = 500;
-    this.type = this.name;
+    this.statusCode = 500;
+    this.errorType = this.name;
     this.property = offendingProperty || undefined;
     this.value = value || undefined;
 }

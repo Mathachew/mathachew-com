@@ -1,0 +1,28 @@
+<div class="sidebar" role="aside" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+		<header class="header">
+			{{#if @blog.logo}}
+			<a href="/">
+				<img id="blog" class="logo" src="{{@blog.logo}}">
+			</a>
+			{{else}}
+			<a href="/"><img class="logo" src="https://www.gravatar.com/avatar/b1603147e6d44f61b4aaa9d64ceea272?s=128&d=identicon&r=PG"></a>
+			<h1 class="title"><a href="/">{{@blog.title}}</a></h1>
+			{{/if}}
+
+			<div class="separator"></div>
+
+			<p class="description">{{{@blog.description}}}</p>
+			<div class="social-icons">
+				<a href="/" class="fa fa-home"></a>
+				<a href="https://github.com/mathachew" class="fa fa-github"></a>
+				<a href="http://stackoverflow.com/users/94656/mathachew" class="fa fa-stack-overflow"></a>
+				<a href="https://twitter.com/mathachew" class="fa fa-twitter"></a>
+				<a href="mailto:me@domain.com" class="fa fa-envelope" id="email"></a>
+			</div>
+			<nav>
+				<a href="/about/">About</a> |
+				<a href="/sandbox/">Sandbox</a> |
+				<a href="/portfolio/">Portfolio</a>
+			</nav>
+		</header>
+	</div>
