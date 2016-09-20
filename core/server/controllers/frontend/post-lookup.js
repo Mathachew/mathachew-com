@@ -22,6 +22,11 @@ function postLookup(postUrl) {
         postParams,
         params;
 
+    if (postUrl.split('/').length > 3) {
+        postPermalink = '/:category' + postPermalink;
+        pagePermalink = '/:category' + pagePermalink;
+    }
+
     // Convert saved permalink into a path-match function
     matchFuncPost = routeMatch(getOptionsFormat(postPermalink));
     matchFuncPage = routeMatch(getOptionsFormat(pagePermalink));
@@ -49,7 +54,13 @@ function postLookup(postUrl) {
     }
 
     // Sanitize params we're going to use to lookup the post.
-    params = _.pick(params, 'slug', 'id');
+    params = _.pick(params, 'category', 'slug', 'id');
+
+    if (params['category']) {
+        params['slug'] = params['category'] + '/' + params['slug'];
+        params = _.omit(params, 'category');
+    }
+
     // Add author & tag
     params.include = 'author,tags';
 
