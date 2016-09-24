@@ -14847,7 +14847,7 @@ define('ghost-admin/services/slug-generator', ['exports', 'ember-service', 'rsvp
                 return resolve('');
             }
 
-            url = this.get('ghostPaths.url').api('slugs', slugType, encodeURIComponent(textToSlugify));
+            url = this.get('ghostPaths.url').api('slugs', slugType) + '?name=' + encodeURIComponent(textToSlugify);
 
             return this.get('ajax').request(url).then(function (response) {
                 var _response$slugs = _slicedToArray(response.slugs, 1);

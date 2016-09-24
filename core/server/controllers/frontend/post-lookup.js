@@ -22,7 +22,7 @@ function postLookup(postUrl) {
         postParams,
         params;
 
-    if (postUrl.split('/').length > 3) {
+    if (postUrl.split('/').length > 4 || (postUrl.split('/').length > 3 && postUrl.indexOf('/edit/') == -1)) {
         postPermalink = '/:category' + postPermalink;
         pagePermalink = '/:category' + pagePermalink;
     }
