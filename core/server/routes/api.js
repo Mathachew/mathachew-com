@@ -97,7 +97,7 @@ apiRoutes = function apiRoutes(middleware) {
     router.get('/clients/slug/:slug', api.http(api.clients.read));
 
     // ## Slugs
-    router.get('/slugs/:type/:name', authenticatePrivate, api.http(api.slugs.generate));
+    router.get('/slugs/:type', authenticatePrivate, api.http(api.slugs.generate));
 
     // ## Themes
     router.get('/themes/:name/download',
